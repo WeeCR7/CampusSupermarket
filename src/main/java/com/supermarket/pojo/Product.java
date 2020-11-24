@@ -5,7 +5,7 @@ import lombok.Data;
 import org.joda.time.DateTime;
 
 @Data
-public class product {
+public class Product {
     @ApiModelProperty("商品id")
     private Integer id;
 
