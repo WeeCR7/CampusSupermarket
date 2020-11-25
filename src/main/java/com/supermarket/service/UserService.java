@@ -1,9 +1,9 @@
 package com.supermarket.service;
 
-import com.github.pagehelper.PageInfo;
-import com.supermarket.pojo.User;
+
+import java.util.Map;
 
 
 public interface UserService {
-    PageInfo<User> getUserList();
+    Map<String,Object> getUserList();
 }

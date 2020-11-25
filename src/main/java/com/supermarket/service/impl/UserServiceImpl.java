@@ -9,6 +9,8 @@ import com.supermarket.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.Map;
+
 @Service
 public class UserServiceImpl implements UserService {
 
@@ -16,10 +18,10 @@ public class UserServiceImpl implements UserService {
     private UserMapper userMapper;
 
     @Override
-    public PageInfo<User> getUserList() {
+    public Map<String,Object> getUserList() {
         PaginationUtil<User> pagination = new PaginationUtil<>();
         PageHelper.startPage(1, 10);
-        PageInfo<User> pageInfo = pagination.getPage(userMapper.getUserList());
-        return pageInfo;
+        Map<String,Object> map = pagination.getPage(userMapper.getUserList());
+        return map;
     }
 }
