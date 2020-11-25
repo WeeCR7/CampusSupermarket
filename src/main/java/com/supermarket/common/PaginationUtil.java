@@ -1,6 +1,5 @@
 package com.supermarket.common;
 
-import com.github.pagehelper.Page;
 import com.github.pagehelper.PageHelper;
 import com.github.pagehelper.PageInfo;
 
@@ -11,8 +10,7 @@ import java.util.List;
  */
 public class PaginationUtil<T> {
 
-    PageInfo<T> getPage(List<T> list) {
-        PageHelper.startPage(1, 10);
+    public PageInfo<T> getPage(List<T> list) {
         PageInfo pageInfo = new PageInfo(list);
         return pageInfo;
     }
