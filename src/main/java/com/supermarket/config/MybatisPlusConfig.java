@@ -19,7 +19,7 @@ public class MybatisPlusConfig {
     public static final String FILE_NAME_MODEL = "%sEntity";
 
     /** 文件名后缀：Dao */
-    public static final String FILE_NAME_DAO = "I%sMapper";
+    public static final String FILE_NAME_DAO = "%sMapper";
 
     /** 文件名后缀：Mapper */
     public static final String FILE_NAME_XML = "%sMapper";
