@@ -16,30 +16,30 @@ import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.core.conditions.query.LambdaQueryWrapper;
 
-import com.supermarket.service.MenuService;
-import com.supermarket.entity.MenuEntity;
+import com.supermarket.service.ProductService;
+import com.supermarket.entity.ProductEntity;
 
 /**
  * <p>
- * 菜单表 前端控制器
+ *  前端控制器
  * </p>
  *
  * @author zhanjiawei
  * @since 2021-01-07
  */
-@Api(value = "MenuController", tags= { "菜单表"})
+@Api(value = "ProductController", tags= {"商品表"})
 @RestController
-@RequestMapping("/menu-entity")
-public class MenuController{
+@RequestMapping("/product-entity")
+public class ProductController{
 
     @Autowired
-    private MenuService menuEntityService;
+    private ProductService productEntityService;
 
     @PostMapping("/list")
     @ApiOperation(value = "分页查询数据")
-    public Result page(Page page, MenuEntity menuEntity){
-        LambdaQueryWrapper<MenuEntity> wrapper = new QueryWrapper().lambda();
-        IPage<MenuEntity> result = menuEntityService.page(page, wrapper);
+    public Result page(Page page, ProductEntity productEntity){
+        LambdaQueryWrapper<ProductEntity> wrapper = new QueryWrapper().lambda();
+        IPage<ProductEntity> result = productEntityService.page(page, wrapper);
         return Result.success(result);
     }
 
@@ -53,21 +53,21 @@ public class MenuController{
         if(id == null){
             return Result.fail("主键不能为空");
         }
-        MenuEntity menuEntity = menuEntityService.getById(id);
-        return Result.success(menuEntity);
+        ProductEntity productEntity = productEntityService.getById(id);
+        return Result.success(productEntity);
     }
 
     @PostMapping("/save")
     @ApiOperation(value = "新增")
-    public Result save(MenuEntity menuEntity){
-        boolean result = menuEntityService.save(menuEntity);
+    public Result save(ProductEntity productEntity){
+        boolean result = productEntityService.save(productEntity);
         return Result.success(result);
     }
 
     @PostMapping("/update")
     @ApiOperation(value = "修改")
-    public Result update(MenuEntity menuEntity) {
-    boolean result = menuEntityService.updateById(menuEntity);
+    public Result update(ProductEntity productEntity) {
+    boolean result = productEntityService.updateById(productEntity);
         return Result.success(result);
     }
 
@@ -81,7 +81,7 @@ public class MenuController{
         if(id == null){
             return Result.fail("主键不能为空");
         }
-        boolean result = menuEntityService.removeById(id);
+        boolean result = productEntityService.removeById(id);
         return Result.success(result);
     }
 }

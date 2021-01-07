@@ -119,6 +119,7 @@ public class MybatisPlusConfig {
         // templateConfig.setEntity("templates/entity2.java");
         // templateConfig.setService();
         // templateConfig.setController();
+        templateConfig.setController("/templates/vm/controller.java.vm");
 
         templateConfig.setXml(null);
         mpg.setTemplate(templateConfig);
@@ -131,7 +132,7 @@ public class MybatisPlusConfig {
         strategy.setEntityLombokModel(true);
         strategy.setRestControllerStyle(true);
         // 写于父类中的公共字段
-        strategy.setSuperEntityColumns("id");
+//        strategy.setSuperEntityColumns("id");
         strategy.setInclude(scanner("表名，多个英文逗号分割").split(","));
         strategy.setControllerMappingHyphenStyle(true);
         strategy.setTablePrefix(pc.getModuleName() + "_");

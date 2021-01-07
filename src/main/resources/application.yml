@@ -6,10 +6,12 @@ spring:
     username: root
     password: 123456
     driver-class-name: com.mysql.cj.jdbc.Driver
-mybatis:
-  configuration:
-    map-underscore-to-camel-case: true
-  mapper-locations: classpath:/mapper/*Mapper.xml
+#mybatis:
+#  configuration:
+#    map-underscore-to-camel-case: true
+#  mapper-locations: classpath:/mapper/*Mapper.xml
 logging:
   level:
     com.supermarket.mapper: debug
+mybatis-plus:
+  mapper-locations:classpath*:/mapper/*Mapper.xml

@@ -1,8 +1,8 @@
 package com.supermarket.entity;
 
+import com.baomidou.mybatisplus.annotation.TableName;
 import com.baomidou.mybatisplus.annotation.IdType;
 import com.baomidou.mybatisplus.annotation.TableId;
-import com.baomidou.mybatisplus.annotation.TableName;
 import java.io.Serializable;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
@@ -11,7 +11,7 @@ import lombok.EqualsAndHashCode;
 
 /**
  * <p>
- * 菜单表
+ * 
  * </p>
  *
  * @author zhanjiawei
@@ -19,24 +19,21 @@ import lombok.EqualsAndHashCode;
  */
 @Data
 @EqualsAndHashCode(callSuper = false)
-@TableName("menu")
-@ApiModel(value="MenuEntity对象", description="菜单表")
-public class MenuEntity implements Serializable {
+@TableName("t_order")
+@ApiModel(value="TOrderEntity对象", description="")
+public class TOrderEntity implements Serializable {
 
     private static final long serialVersionUID = 1L;
 
-    @ApiModelProperty(value = "菜单ID")
+    @ApiModelProperty(value = "id")
     @TableId(value = "id", type = IdType.AUTO)
     private Integer id;
 
-    @ApiModelProperty(value = "菜单名称")
-    private String menuName;
+    @ApiModelProperty(value = "商品id")
+    private Integer productId;
 
-    @ApiModelProperty(value = "菜单路径")
-    private String menuPath;
-
-    @ApiModelProperty(value = "菜单图标")
-    private String menuIcon;
+    @ApiModelProperty(value = "用户id")
+    private Integer userId;
 
 
 }
